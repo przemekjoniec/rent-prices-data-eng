@@ -1,21 +1,17 @@
-version: '3.8'
-
 services:
-  # Serwis 1: Nasza baza danych
   db:
     image: postgres:15
     container_name: de_project_postgres
     restart: always
     environment:
-      POSTGRES_USER: user        # Login do bazy
-      POSTGRES_PASSWORD: password # Hasło do bazy
-      POSTGRES_DB: real_estate    # Nazwa bazy danych
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: real_estate
     ports:
-      - "5432:5432"               # Mapowanie portu (lokalny:kontenera)
+      - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data # Trwałość danych
+      - postgres_data:/var/lib/postgresql/data
 
-  # Serwis 2: Interfejs graficzny do bazy
   pgadmin:
     image: dpage/pgadmin4
     container_name: de_project_pgadmin
@@ -24,7 +20,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
     ports:
-      - "8080:80"                 # Będziesz wchodzić przez localhost:8080
+      - "8080:80"
 
 volumes:
-  postgres_data:                  # Dzięki temu dane nie znikną po wyłączeniu kontenera
+  postgres_data:

@@ -1,0 +1,46 @@
+name: OLX Data Pipeline
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-etl:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: real_estate
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Pobierz kod z repozytorium
+        uses: actions/checkout@v3
+
+      - name: Skonfiguruj Pythona
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Zainstaluj biblioteki
+        run: |
+          pip install requests beautifulsoup4 psycopg2-binary
+
+      - name: Uruchom rurociąg ETL
+        run: python main.py
+        env:
+          DB_HOST: localhost
+          DB_NAME: real_estate
+          DB_USER: user
+          DB_PASS: password
