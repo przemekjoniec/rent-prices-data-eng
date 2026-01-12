@@ -39,8 +39,8 @@ A end-to-end Data Engineering pipeline designed to extract, transform, and load 
 
 ## ⚙️ Setup & Installation
 1. Prerequisities  
-    -Docker & Docker Desktop installed.
-    -Python 3.10+ installed.
+    - Docker & Docker Desktop installed.
+    - Python 3.10+ installed.
 
 2. Environment Setup
 Clone the repository and install dependencies:  
