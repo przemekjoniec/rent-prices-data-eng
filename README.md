@@ -38,24 +38,27 @@ A end-to-end Data Engineering pipeline designed to extract, transform, and load 
 -- -
 
 ## ⚙️ Setup & Installation
-1. Prerequisities
-Docker & Docker Desktop installed.
-
-Python 3.10+ installed.
+1. Prerequisities  
+    - Docker & Docker Desktop installed.
+    - Python 3.10+ installed.
 
 2. Environment Setup
 Clone the repository and install dependencies:
-    git clone <your-repo-url>
-    cd real-estate-data-pipeline
-    pip install -r requirements.txt
-
-3. Launch Infrastructure
+```text
+   - git clone https://github.com/przemekjoniec/rent-prices-data-eng
+   - cd real-estate-data-pipeline
+   - pip install -r requirements.txt
+```
+4. Launch Infrastructure
 Start the PostgreSQL database and pgAdmin:
-    docker-compose up -d
-
-4. Run the Pipeline
+```text
+    - docker-compose up -d
+```
+6. Run the Pipeline
 Execute the full ETL process:
-    python main.py
+```text
+    - python main.py
+```
 ---
 
 ## 📊 Data Model & UPSERT Logic
@@ -70,13 +73,9 @@ Gold: Aggregated reports (Average price by district).
 Handling Duplicates: The system uses the listing URL as a UNIQUE CONSTRAINT. If a scraper encounters a listing already present in the database, it performs an UPDATE on the price and timestamp instead of creating a duplicate.
 
 ## 📈 Sample Analysis Output
-After running the pipeline, the system automatically generates a market report: 
-| District | Avg. Price (PLN) | Offers Count | 
-----------------------------------------------
-| Stare Miasto | 3200.50 | 45 |
-| Kazimierz | 3150.00 | 12 |
-| Podgórze | 2800.00 | 38 |
-----------------------------------------------
+After running the pipeline, the system automatically generates a market report:  
+<img width="397" height="334" alt="photo1" src="https://github.com/user-attachments/assets/25204b54-6b22-4e65-b2c6-c46b6c8af87a" />
+
 
 ---
 Created as a part of a Data Engineering Portfolio by Przemysław Joniec
