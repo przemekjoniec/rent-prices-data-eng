@@ -45,7 +45,7 @@ Python 3.10+ installed.
 
 2. Environment Setup
 Clone the repository and install dependencies:
-    git clone <your-repo-url>
+    git clone https://github.com/przemekjoniec/rent-prices-data-eng
     cd real-estate-data-pipeline
     pip install -r requirements.txt
 
