@@ -73,7 +73,7 @@ Gold: Aggregated reports (Average price by district).
 Handling Duplicates: The system uses the listing URL as a UNIQUE CONSTRAINT. If a scraper encounters a listing already present in the database, it performs an UPDATE on the price and timestamp instead of creating a duplicate.
 
 ## 📈 Sample Analysis Output
-After running the pipeline, the system automatically generates a market report: 
+After running the pipeline, the system automatically generates a market report:  
 <img width="397" height="334" alt="photo1" src="https://github.com/user-attachments/assets/25204b54-6b22-4e65-b2c6-c46b6c8af87a" />
 
 
