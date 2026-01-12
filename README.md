@@ -45,19 +45,19 @@ A end-to-end Data Engineering pipeline designed to extract, transform, and load 
 2. Environment Setup
 Clone the repository and install dependencies:
 ```text
-   - git clone https://github.com/przemekjoniec/rent-prices-data-eng
-   - cd real-estate-data-pipeline
-   - pip install -r requirements.txt
+   git clone https://github.com/przemekjoniec/rent-prices-data-eng
+   cd real-estate-data-pipeline
+   pip install -r requirements.txt
 ```
 4. Launch Infrastructure
 Start the PostgreSQL database and pgAdmin:
 ```text
-    - docker-compose up -d
+    docker-compose up -d
 ```
 6. Run the Pipeline
 Execute the full ETL process:
 ```text
-    - python main.py
+    python main.py
 ```
 ---
 
