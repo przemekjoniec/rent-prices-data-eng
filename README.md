@@ -38,24 +38,23 @@ A end-to-end Data Engineering pipeline designed to extract, transform, and load 
 -- -
 
 ## ⚙️ Setup & Installation
-1. Prerequisities
-Docker & Docker Desktop installed.
-
-Python 3.10+ installed.
+1. Prerequisities  
+    -Docker & Docker Desktop installed.
+    -Python 3.10+ installed.
 
 2. Environment Setup
-Clone the repository and install dependencies:
-    git clone https://github.com/przemekjoniec/rent-prices-data-eng
-    cd real-estate-data-pipeline
-    pip install -r requirements.txt
+Clone the repository and install dependencies:  
+   - git clone https://github.com/przemekjoniec/rent-prices-data-eng
+   - cd real-estate-data-pipeline
+   - pip install -r requirements.txt
 
 3. Launch Infrastructure
 Start the PostgreSQL database and pgAdmin:
-    docker-compose up -d
+    - docker-compose up -d
 
 4. Run the Pipeline
 Execute the full ETL process:
-    python main.py
+    - python main.py
 ---
 
 ## 📊 Data Model & UPSERT Logic
